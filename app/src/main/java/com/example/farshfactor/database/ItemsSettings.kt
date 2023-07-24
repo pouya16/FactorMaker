@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class WashingSettings(
+data class ItemsSettings(
     @PrimaryKey(autoGenerate = true)
     private var id : Int = 0,
     @ColumnInfo("type")

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="40dp"
+        app:strokeWidth="@dimen/stroke_list"
+        app:strokeColor="@color/black"
+        android:layout_margin="@dimen/margin_list"
+        android:padding="@dimen/padding_list">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layoutDirection="rtl"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel_24"
+                android:id="@+id/btn_delete"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:id="@+id/txt_name"
+                android:text="مهدی طباطبایی"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="09133252908"
+                android:layout_marginEnd="8dp"
+                android:id="@+id/txt_phone"
+                android:gravity="center"
+                android:layout_weight="10"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="10"
+                android:id="@+id/txt_orders"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

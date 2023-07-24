@@ -11,5 +11,7 @@ data class Factor(
     @ColumnInfo(name="user")
     private var user_id: Int,
     @ColumnInfo(name="date")
-    private var date:String
+    private var date:String,
+    @ColumnInfo(name = "discount")
+    private var discount_percentage: Int
 )
