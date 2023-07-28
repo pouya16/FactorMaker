@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface FactorDetailDao {
 
-    @Query("SELECT * FROM factorDetail WHERE factor_id= :id")
+    @Query("SELECT * FROM factorDetail WHERE factor= :id")
     fun getDetailsByFactor(id: Int) : Flow<List<FactorDetail>>
 
     @Insert

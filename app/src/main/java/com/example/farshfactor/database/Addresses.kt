@@ -8,13 +8,13 @@ import androidx.room.PrimaryKey
 @Entity
 data class Addresses(
     @PrimaryKey(autoGenerate = true)
-    var id : Int,
+    val id : Int,
     @ColumnInfo(name = "userId")
-    var user_id: Int,
+    val user_id: Int,
     @ColumnInfo(name = "lat")
-    var lat: Float,
+    val lat: Float,
     @ColumnInfo(name = "long")
-    var long : Float,
+    val long : Float,
     @ColumnInfo(name = "address")
-    var address : String
+    val address : String
 )

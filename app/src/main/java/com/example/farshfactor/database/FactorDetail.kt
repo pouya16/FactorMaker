@@ -1,17 +1,21 @@
 package com.example.farshfactor.database
 
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Entity
 data class FactorDetail (
     @PrimaryKey(autoGenerate = true)
-    private var id : Int =0,
+    val id : Int,
     @ColumnInfo(name = "factor")
-    private var factor_id : Int,
+    val factor_id : Int,
     @ColumnInfo(name = "type")
-    private var washing_type: Int,
+    val washing_type: Int,
+    @ColumnInfo(name = "type_exp")
+    val washing_extra: String,
     @ColumnInfo(name = "price")
-    private var price:String,
+    val price:String,
     @ColumnInfo(name = "meter")
-    private var meter:Int
+    val meter:Int
 )

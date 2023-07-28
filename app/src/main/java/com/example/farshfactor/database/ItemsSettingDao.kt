@@ -7,15 +7,18 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ItemsSettingDao {
 
-    @Query("SELECT * FROM itemsSetting")
-    fun getAllItems() : Flow<List<ItemsSettings>>
+    @Query("SELECT * FROM settings")
+    fun getAllItems() : Flow<List<Settings>>
+
+    @Query("SELECT * FROM settings WHERE id=:id")
+    fun getSetting(id:Int): Flow<Settings>
 
     @Insert
-    fun saveSetting(itemsSettings: ItemsSettings)
+    suspend fun saveSetting(itemsSettings: Settings)
 
     @Update
-    fun updateSetting(itemsSettings: ItemsSettings)
+    suspend fun updateSetting(itemsSettings: Settings)
 
     @Delete
-    fun deleteSetting(itemsSettings: ItemsSettings)
+    suspend fun deleteSetting(itemsSettings: Settings)
 }

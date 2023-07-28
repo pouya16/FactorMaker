@@ -1,22 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
+
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:backgroundTint="@android:color/holo_blue_light"
+        app:cardCornerRadius="10dp"
+        android:paddingBottom="24dp"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
+        android:layout_marginTop="-25dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="40dp"
+                app:boxStrokeColor="@color/black"
+                android:elevation="1dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusTopEnd="0dp"
+                app:boxCornerRadiusBottomEnd="0dp"
+                app:boxCornerRadiusBottomStart="0dp"
+                app:boxCornerRadiusTopStart="0dp"
+                app:boxStrokeWidth="2dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtName"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="نام آیتم"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layoutDirection="rtl">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="8dp"
+                    app:boxStrokeColor="@color/black"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:elevation="1dp"
+                    app:boxCornerRadiusTopEnd="0dp"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopStart="0dp"
+                    app:boxStrokeWidth="2dp">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="12sp"
+                        android:id="@+id/txt_price"
+                        android:backgroundTint="@android:color/transparent"
+                        android:hint="قیمت أیتم"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="8dp"
+                    android:padding="4dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/black"
+                    android:elevation="1dp"
+                    app:boxCornerRadiusTopEnd="0dp"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopStart="0dp"
+                    app:boxStrokeWidth="2dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:id="@+id/txt_count_type"
+                        android:backgroundTint="@android:color/transparent"
+                        android:hint="واحد شمارش"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textDirection="ltr"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/layout_update"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:cornerRadius="15dp"
+                    android:id="@+id/btn_update"
+                    android:backgroundTint="@android:color/black"
+                    android:text="بروزرسانی"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cornerRadius="15dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_delete"
+                    android:backgroundTint="@android:color/black"
+                    android:text="حذف"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cornerRadius="15dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_cancel"
+                    android:backgroundTint="@android:color/black"
+                    android:text="بیخیال"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cornerRadius="15dp"
+                android:id="@+id/btn_add"
+                android:backgroundTint="@android:color/black"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+
+                android:text="اضافه کردن به لیست"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:id="@+id/recycler_view"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_item_setting"
+            tools:itemCount="4"/>
+
+    </LinearLayout>
+</LinearLayout>

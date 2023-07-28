@@ -6,4 +6,9 @@
     <string name="test_name">شستشوی قالی دستی اعلا</string>
     <string name="title_users">users</string>
     <string name="title_setting">setting</string>
+    <string name="name">نام مشتری</string>
+    <string name="name_mahdi">مهدی طباطبایی</string>
+    <string name="phone">موبایل</string>
+    <string name="mob_test">09133133131</string>
+    <string name="toast_error_data">"اطلاعات را بصورت صحیح وارد نمایید. "</string>
 </resources>

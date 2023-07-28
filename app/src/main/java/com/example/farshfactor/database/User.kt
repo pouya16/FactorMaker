@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey
 @Entity
 data class User(
     @PrimaryKey(autoGenerate = true)
-    private var id: Int = 0,
+    val id: Int,
     @ColumnInfo(name="phone")
-    private var phone:String,
+    val phone:String,
     @ColumnInfo(name="name")
-    private var name:String,
+    val name:String,
     @ColumnInfo(name = "orders")
-    private var order_count:Int
+    val order_count:Int
 )

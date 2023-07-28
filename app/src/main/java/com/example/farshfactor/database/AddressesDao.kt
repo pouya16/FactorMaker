@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface AddressesDao {
 
-    @Query("SELECT * FROM addresses WHERE userId =: id")
+    @Query("SELECT * FROM addresses WHERE userId = :id")
     fun getAddressesByUser(id:Int): Flow<List<Addresses>>
 
     @Insert

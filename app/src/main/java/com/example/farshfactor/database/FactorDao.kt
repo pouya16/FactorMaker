@@ -10,7 +10,7 @@ interface FactorDao {
     @Query("SELECT * FROM factor")
     fun getAllFactors() : Flow<List<Factor>>
 
-    @Query("SELECT * FROM factor WHER user= :id")
+    @Query("SELECT * FROM factor WHERE user= :id")
     fun getFactorsByUser(id:Int): Flow<List<Factor>>
 
     @Query("SELECT * FROM factor WHERE date= :date ")

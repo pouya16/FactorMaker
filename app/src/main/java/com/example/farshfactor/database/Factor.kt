@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey
 @Entity
 data class Factor(
     @PrimaryKey(autoGenerate = true)
-    private var id : Int = 100000,
+    val id : Int,
     @ColumnInfo(name="user")
-    private var user_id: Int,
+    val user_id: Int,
     @ColumnInfo(name="date")
-    private var date:String,
+    val date:String,
     @ColumnInfo(name = "discount")
-    private var discount_percentage: Int
+    val discount_percentage: Int
 )

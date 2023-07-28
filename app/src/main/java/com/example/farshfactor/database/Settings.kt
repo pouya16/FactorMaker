@@ -5,11 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class ItemsSettings(
+data class Settings(
     @PrimaryKey(autoGenerate = true)
-    private var id : Int = 0,
+    val id : Int =0,
     @ColumnInfo("type")
-    private var type:String,
+    val type:String,
+    @ColumnInfo("kind")
+    val count_kind:String,
     @ColumnInfo("price")
-    private var price:String
+    val price:String
 )

@@ -6,12 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.example.farshfactor.MyApp
 import com.example.farshfactor.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+
+    private val viewModel: HomeViewModel by viewModels<HomeViewModel> {
+        HomeViewModelFactory(
+            (activity?.application as MyApp).database.userDao(),
+            (activity?.application as MyApp).database.factorDao(),
+            (activity?.application as MyApp).database.factorDetailDao()
+        )
+    }
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,8 +34,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -33,6 +44,11 @@ class HomeFragment : Fragment() {
             textView.text = it
         }*/
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.viewModelCreated()
     }
 
     override fun onDestroyView() {
