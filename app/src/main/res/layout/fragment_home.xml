@@ -78,6 +78,8 @@
                 android:layout_marginTop="2dp"
                 app:boxStrokeColor="@color/black"
                 android:elevation="1dp"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxCornerRadiusTopEnd="0dp"
                 app:boxCornerRadiusBottomEnd="0dp"
                 app:boxCornerRadiusBottomStart="0dp"
@@ -85,7 +87,7 @@
                 app:boxStrokeWidth="2dp">
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="60dp"
                     android:textSize="15sp"
                     android:paddingRight="16dp"
                     android:id="@+id/txt_type"
@@ -107,6 +109,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginTop="8dp"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:boxStrokeColor="@color/black"
                     android:elevation="1dp"
                     app:boxCornerRadiusTopEnd="0dp"
@@ -116,7 +120,7 @@
                     app:boxStrokeWidth="2dp">
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:id="@+id/txt_price"
                         android:backgroundTint="@android:color/transparent"
                         android:hint="قیمت کالا"/>
@@ -132,7 +136,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginTop="8dp"
                     android:padding="4dp"
-                    style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:boxStrokeColor="@color/black"
                     android:elevation="1dp"
                     app:boxCornerRadiusTopEnd="0dp"
@@ -142,7 +146,7 @@
                     app:boxStrokeWidth="2dp">
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:id="@+id/txt_count"
                         android:backgroundTint="@android:color/transparent"
                         android:hint="تعداد"/>

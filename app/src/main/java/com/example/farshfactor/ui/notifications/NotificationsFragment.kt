@@ -39,9 +39,8 @@ class NotificationsFragment : Fragment() {
     ): View {
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
 
-        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,10 +62,19 @@ class NotificationsFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.recyclerView.adapter = adapter
 
-        binding.btnCancel.setOnClickListener{ viewModel.updateNeedUpdate(false)}
+        binding.btnCancel.setOnClickListener{ viewModel.updateNeedUpdate(false)
+        clearData()}
         binding.btnDelete.setOnClickListener{
-            viewModel.
+            viewModel.deleteSetting(settings)
+            viewModel.updateNeedUpdate(false)
+            clearData()
         }
+        binding.btnUpdate.setOnClickListener{
+            viewModel.updateSetting(settings)
+            viewModel.updateNeedUpdate(false)
+            clearData()
+        }
+
 
         viewModel.needUpdate.observe(this.viewLifecycleOwner){
             needUpdate = it
@@ -87,6 +95,14 @@ class NotificationsFragment : Fragment() {
         }
     }
 
+    private fun clearData(){
+        binding.apply {
+            txtName.setText("")
+            txtPrice.setText("")
+            txtCountType.setText("")
+        }
+    }
+
 
     private fun addNewItem(){
         if(isEntryValid()){
@@ -94,13 +110,9 @@ class NotificationsFragment : Fragment() {
             count_kind = binding.txtCountType.text.toString(),
             price = binding.txtPrice.text.toString())
             viewModel.addNewSetting(setting)
-            binding.apply {
-                txtName.setText("")
-                txtPrice.setText("")
-                txtCountType.setText("")
-            }
+            clearData()
         }else{
-            Toast.makeText(context,context?.getString(R.string.toast_error_data),Toast.LENGTH_SHORT)
+            Toast.makeText(context,context?.getString(R.string.toast_error_data),Toast.LENGTH_SHORT).show()
         }
     }
 

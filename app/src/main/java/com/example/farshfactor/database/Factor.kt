@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Factor(
     @PrimaryKey(autoGenerate = true)
-    val id : Int,
+    val id : Int = 0,
     @ColumnInfo(name="user")
     val user_id: Int,
     @ColumnInfo(name="date")
