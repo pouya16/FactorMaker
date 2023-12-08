@@ -34,22 +34,16 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        /*val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }*/
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.viewModelCreated()
     }
+
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

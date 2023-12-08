@@ -1,26 +1,20 @@
 package com.example.farshfactor.ui.home
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.example.farshfactor.database.FactorDao
-import com.example.farshfactor.database.FactorDetailDao
-import com.example.farshfactor.database.UserDao
+import androidx.lifecycle.*
+import com.example.farshfactor.database.*
 import com.example.farshfactor.ui.notifications.NotificationsViewModel
 
 
 class HomeViewModel(
+    itemsSettingDao: ItemsSettingDao,
     userDao: UserDao,
     factorDao: FactorDao,
     factorDetailDao: FactorDetailDao
 ): ViewModel() {
 
-    fun viewModelCreated(){
-        Log.i("Log1","view model is created")
-    }
 
+    val allSetting: LiveData<List<Settings>> = itemsSettingDao.getAllItems().asLiveData()
+    val allUsers : LiveData<List<User>> = userDao.getUsers().asLiveData()
 
 
     /*private val _text = MutableLiveData<String>().apply {
@@ -30,6 +24,7 @@ class HomeViewModel(
 }
 
 class HomeViewModelFactory(
+    private val itemsSettingDao: ItemsSettingDao,
     private val userDao: UserDao,
     private val factorDao: FactorDao,
     private val factorDetailDao: FactorDetailDao
@@ -37,7 +32,7 @@ class HomeViewModelFactory(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(HomeViewModel::class.java)){
             @Suppress("UNCHECKED_STATEMENT")
-            return HomeViewModel(userDao,factorDao,factorDetailDao) as T
+            return HomeViewModel(itemsSettingDao,userDao,factorDao,factorDetailDao) as T
         }
         throw IllegalArgumentException("UNKNOWN VIEW MODEL CLASS")
     }
